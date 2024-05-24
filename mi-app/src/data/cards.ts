@@ -19,7 +19,7 @@ export interface CardData {
     {
         title: "Nintendo",
         description: "Iguanas are a genus of herbivorous lizards that are native to tropical areas of Mexico, Central America, South America, and the Caribbean.",
-        image: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/01/nintendo-logo-1852501.jpg",
+        image: "https://cdn.dribbble.com/userupload/14291664/file/original-82fcb824604aac8503e8b94b74aeb161.png?resize=400x0",
     },
     {
         title: "Steam",
@@ -37,14 +37,14 @@ export interface CardData {
         image: "https://www.gamereactor.es/media/57/minecraft_3165723b.png",
       },
       {
-        title: "Mojang",
+        title: "Discord",
         description: "Iguanas are a genus of herbivorous lizards that are native to tropical areas of Mexico, Central America, South America, and the Caribbean.",
-        image: "https://www.gamereactor.es/media/57/minecraft_3165723b.png",
+        image: "https://www.cnet.com/a/img/resize/72828465e2fdd0ccc10f819f7bace91ed9af63f7/hub/2023/05/12/d50e2f65-2cf8-48be-8f58-437b70146a34/discord-logo-16x9.jpg?auto=webp&fit=crop&height=675&width=1200",
       },
       {
-        title: "Mojang",
+        title: "Twitch",
         description: "Iguanas are a genus of herbivorous lizards that are native to tropical areas of Mexico, Central America, South America, and the Caribbean.",
-        image: "https://www.gamereactor.es/media/57/minecraft_3165723b.png",
+        image: "https://variety.com/wp-content/uploads/2019/09/twitch_logo.jpg",
       },
       
   ];

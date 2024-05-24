@@ -14,7 +14,7 @@ import SearchBar from './SearchBar';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#7DB24A',
+      main: '#2f3e46',
     },
   },
 });

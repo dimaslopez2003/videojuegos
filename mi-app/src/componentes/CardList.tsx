@@ -3,6 +3,7 @@ import Cards from '../componentes/Cards';
 import { cardsData } from '../data/cards';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 const CardList: React.FC = () => {
     return (

@@ -7,6 +7,7 @@ import CintaOpciones from './componentes/CintaOpciones';
 import Slider from './componentes/slider';
 import Cards from './componentes/Cards';
 import CardList  from './componentes/CardList';
+import Division from './componentes/Division';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
@@ -24,6 +25,7 @@ function App() {
       <div style={{ marginTop: '100px' }}>
           <CardList />
       </div>
+      <Division />
       {/* <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}></Box> */}
       {/* <Box sx={{ flexGrow: 1 }}></Box> */}
       <Footer />

@@ -10,7 +10,7 @@ const MotionButton = motion(Button);
 export default function Opciones() {
   return (
     <AppBar position="static" color="default">
-      <Toolbar sx={{ justifyContent: 'center', backgroundColor: 'black' }}>
+      <Toolbar sx={{ justifyContent: 'center', backgroundColor: '#52696f' }}>
         <MotionButton 
           color="inherit" 
           sx={{ color: 'white', mx: 2 }} 

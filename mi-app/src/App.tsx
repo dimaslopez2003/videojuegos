@@ -6,6 +6,7 @@ import Footer from './componentes/footer';
 import CintaOpciones from './componentes/CintaOpciones';
 import Slider from './componentes/slider';
 import Cards from './componentes/Cards';
+import NinCardList from './componentes/NinCardList';
 import CardList  from './componentes/CardList';
 import Division from './componentes/Division';
 import Box from '@mui/material/Box';
@@ -26,9 +27,9 @@ function App() {
           <CardList />
       </div>
       <Division />
-      {/* <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}></Box> */}
-      {/* <Box sx={{ flexGrow: 1 }}></Box> */}
+      <NinCardList />
       <Footer />
+      
     </div>
   );
 }

@@ -27,7 +27,7 @@ const theme = createTheme({
             <MotionButton 
               color="secondary" 
               sx={{ color: 'white', mx: 2 }} 
-              whileHover={{ scale: 1.2, color: "#DC2424" }} 
+              whileHover={{ scale: 1.2, color: "#84a98c" }} 
               transition={{ duration: 0.3 }}
             >
               <Typography 

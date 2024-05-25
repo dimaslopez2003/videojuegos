@@ -19,7 +19,7 @@ export interface CardData {
     {
         title: "Nintendo",
         description: "Iguanas are a genus of herbivorous lizards that are native to tropical areas of Mexico, Central America, South America, and the Caribbean.",
-        image: "https://cdn.dribbble.com/userupload/14291664/file/original-82fcb824604aac8503e8b94b74aeb161.png?resize=400x0",
+        image: "https://fotografias-neox.atresmedia.com/clipping/cmsimages01/2019/05/10/507D2DEF-E8A8-4829-982C-F474A7016DFB/98.jpg?crop=1777,1000,x116,y0&width=1900&height=1069&optimize=high&format=webply",
     },
     {
         title: "Steam",

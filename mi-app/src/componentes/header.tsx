@@ -8,8 +8,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 import SearchBar from './SearchBar';
+import imagen from '../images/logo.png';
+import { Link } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -22,6 +30,7 @@ const theme = createTheme({
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -30,6 +39,46 @@ export default function MenuAppBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const menuItems = [
+    { text: 'Catálogo', path: '#' },
+    { text: 'Más Populares', path: '/populares' },
+    { text: 'Novedades', path: '#' },
+    { text: 'Ofertas', path: '#' },
+  ];
+
+  const drawer = (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {menuItems.map((item, index) => (
+          <ListItem  key={index} >
+            <Link to={item.path}>{item.text}</Link>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        <ListItem button>
+          <ListItemText primary="Profile" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="My account" />
+        </ListItem>
+      </List>
+    </Box>
+  );
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,13 +91,17 @@ export default function MenuAppBar() {
               color="inherit"
               aria-label="menu"
               sx={{ mr: 2 }}
+              onClick={toggleDrawer(true)}
             >
               <MenuIcon />
             </IconButton>
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Typography variant="h1" sx={{ fontSize: '50px', textAlign: 'center', fontFamily: 'Jolly Lodger, cursive', flexGrow: 1 }}>
+              <Link to="/">
+              <Typography variant="h1" sx={{ fontSize: '50px', textAlign: 'center', fontFamily: 'Jolly Lodger, cursive', flexGrow: 1, display: 'flex', alignItems: 'center', columnGap: '1rem'}}>
+                <img src={imagen} alt="controller" style={{ width: '50px', height: '50px' }} />
                 DALM & GAMING
               </Typography>
+              </Link>
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}>
                 <SearchBar />
               </Box>
@@ -87,6 +140,14 @@ export default function MenuAppBar() {
             )}
           </Toolbar>
         </AppBar>
+        <Drawer
+          anchor="left"
+          open={drawerOpen}
+          onClose={toggleDrawer(false)}
+          sx={{ '& .MuiDrawer-paper': { backgroundColor: '#84a98c' } }}
+        >
+          {drawer}
+        </Drawer>
       </Box>
     </ThemeProvider>
   );

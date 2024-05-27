@@ -1,105 +1,73 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
-import MuiAccordionSummary, {
-  AccordionSummaryProps,
-} from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Populares from './Populares'; 
+import { Grid, Typography, Box, AppBar, Toolbar, IconButton } from '@mui/material';
+import Footer from '../componentes/footer';
 import MenuAppBar from '../componentes/header';
+import { pop } from '../data/pops';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from 'react-share';
 
-const Accordion = styled((props: AccordionProps) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  '&:not(:last-child)': {
-    borderBottom: 0,
-  },
-  '&::before': {
-    display: 'none',
-  },
-}));
+const Populares: React.FC = () => {
+    return (
+        <Box sx={{ backgroundColor: '#f0f0f0', minHeight: '100vh' }}>
+            <MenuAppBar />
+            <Box sx={{ position: 'relative', p: 4, overflow: 'hidden' }}>
+                <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+                    <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Background gif" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </Box>
+                <Typography variant="h4" sx={{ textAlign: 'center', mb: 4, fontFamily: 'Jolly Lodger, cursive' }}>
+                    Videojuegos Más Populares
+                </Typography>
+                <Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ position: 'relative', zIndex: 1 }}>
+                    {pop.map((card, index) => (
+                        <Grid item key={index} xs={12} sm={6} md={4} lg={3} xl={3}>
+                            <Box
+                                sx={{
+                                    backgroundColor: '#84a98c',
+                                    margin: 2,
+                                    transition: 'transform 0.3s ease-in-out',
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                    }
+                                }}
+                            >
+                                <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
+                                    <Box component="img" src={card.avatarImage} sx={{ width: 40, height: 40, mr: 2 }} />
+                                    <Box>
+                                        <Typography variant="h6" sx={{ fontFamily: 'Jolly Lodger, cursive', color: 'white' }}>{card.title}</Typography>
+                                        <Typography variant="subtitle1" sx={{ color: 'white' }}>{card.subheader}</Typography>
+                                    </Box>
+                                </Box>
+                                <Box component="img" src={card.image} sx={{ width: '100%', height: 194, objectFit: 'cover' }} />
+                                <Box sx={{ p: 2 }}>
+                                    <Typography variant="body2" sx={{ fontFamily: 'Jolly Lodger, cursive', color: 'white' }}>
+                                        {card.description}
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 2 }}>
+                                    <FacebookShareButton url={window.location.href} title={card.title}>
+                                        <FacebookIcon size={32} round />
+                                    </FacebookShareButton>
+                                    <TwitterShareButton url={window.location.href} title={card.title}>
+                                        <TwitterIcon size={32} round />
+                                    </TwitterShareButton>
+                                    <WhatsappShareButton url={window.location.href} title={card.title}>
+                                        <WhatsappIcon size={32} round />
+                                    </WhatsappShareButton>
+                                </Box>
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+            <Footer />
+        </Box>
+    );
+};
 
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === 'dark'
-      ? 'rgba(255, 255, 255, .05)'
-      : 'rgba(0, 0, 0, .03)',
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(90deg)',
-  },
-  '& .MuiAccordionSummary-content': {
-    marginLeft: theme.spacing(1),
-  },
-}));
-
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
-}));
-
-export default function CustomizedAccordions() {
-  const [expanded, setExpanded] = React.useState<string | false>('panel1');
-
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-      setExpanded(newExpanded ? panel : false);
-    };
-
-  return (
-    <>
-        <MenuAppBar />
-    <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Collapsible Group Item #1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Collapsible Group Item #2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Collapsible Group Item #3</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
-    </>
-  );
-}
-export { Populares };
+export default Populares;

@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2f3e46', // Color principal del AppBar
+      main: '#2f3e46',
     },
     secondary: {
       main: '#4caf50',

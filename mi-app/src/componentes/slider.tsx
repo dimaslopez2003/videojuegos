@@ -9,9 +9,18 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Typography from '@mui/material/Typography';
 
 const images = [
-  'https://cloudfront-us-east-1.images.arcpublishing.com/copesa/BVPSWA6JGRE3FBZJRQM74YVGGE.jpg',
-  'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70070000016597/4dc8ab1f09ced6fb2953b2caedd978c1f23df33b62305bcf3140308962073d57',
-  'https://www.4gamehz.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-15-40-43-dying-light-2-2613765.jpg-immagine-WEBP-3840-%C3%97-2160-pixel-Riscalata-42.png',
+  {
+    url: 'https://cloudfront-us-east-1.images.arcpublishing.com/copesa/BVPSWA6JGRE3FBZJRQM74YVGGE.jpg',
+    link: 'https://www.xbox.com/es-MX/games/store/halo-infinite/9PP5G1F0C2B6'
+  },
+  {
+    url: 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70070000016597/4dc8ab1f09ced6fb2953b2caedd978c1f23df33b62305bcf3140308962073d57',
+    link: 'https://www.minecraft.net/es-es'
+  },
+  {
+    url: 'https://www.4gamehz.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-15-40-43-dying-light-2-2613765.jpg-immagine-WEBP-3840-%C3%97-2160-pixel-Riscalata-42.png',
+    link: 'https://store.steampowered.com/app/534380/Dying_Light_2_Stay_Human_Reloaded_Edition/'
+  },
 ];
 
 const NextArrow = (props: any) => {
@@ -76,7 +85,7 @@ const ImageSlider = () => {
       <Grid item xs={12}>
         <Box sx={{ width: '100%' }}>
           <Slider {...settings}>
-            {images.map((url, index) => (
+            {images.map((image, index) => (
               <Box
                 key={index}
                 sx={{
@@ -92,14 +101,16 @@ const ImageSlider = () => {
               >
                 <Box
                   component="img"
-                  src={url}
+                  src={image.url}
                   alt={`Slide ${index}`}
+                  onClick={() => window.location.href = image.link}
                   sx={{
                     width: '100%',
                     height: 'auto',
                     maxHeight: '400px',
                     objectFit: 'contain',
                     transition: 'transform 0.3s',
+                    cursor: 'pointer',
                   }}
                 />
                 <Typography variant="h6" sx={{ mt: 1 }}>

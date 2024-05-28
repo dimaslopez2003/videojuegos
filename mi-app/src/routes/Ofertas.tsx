@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Grid, Typography, Box, Card, CardHeader, CardMedia, CardContent, CardActions } from '@mui/material';
 import Footer from '../componentes/footer';
 import MenuAppBar from '../componentes/header';
-import { pop } from '../data/pops';
+import { Ofert } from '../data/Ofertas';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -21,10 +21,10 @@ const Populares: React.FC = () => {
                     <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Background gif" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </Box>
                 <Typography variant="h4" sx={{ textAlign: 'center', mb: 4, fontFamily: 'Jolly Lodger, cursive' }}>
-                    Videojuegos Más Populares
+                    Ofertas
                 </Typography>
                 <Grid container spacing={4} justifyContent="center" alignItems="stretch" sx={{ position: 'relative', zIndex: 1 }}>
-                    {pop.map((card, index) => (
+                    {Ofert.map((card, index) => (
                         <Grid item key={index} xs={12} sm={6} md={4} lg={3} xl={3}>
                             <Card
                                 sx={{
@@ -56,6 +56,14 @@ const Populares: React.FC = () => {
                                     <Typography variant="body2" sx={{ fontFamily: 'Jolly Lodger, cursive', color: 'white' }}>
                                         {card.description}
                                     </Typography>
+                                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 2 }}>
+                                        <Typography variant="body1" sx={{ textDecoration: 'line-through', color: 'red', mr: 1 }}>
+                                            {card.originalPrice}
+                                        </Typography>
+                                        <Typography variant="body1" sx={{ color: 'white', fontWeight: 'bold' }}>
+                                            {card.discountedPrice}
+                                        </Typography>
+                                    </Box>
                                 </CardContent>
                                 <CardActions sx={{ justifyContent: 'center', p: 2 }}>
                                     <FacebookShareButton url={window.location.href} title={card.title}>

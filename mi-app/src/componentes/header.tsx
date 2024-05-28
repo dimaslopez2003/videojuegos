@@ -50,7 +50,7 @@ export default function MenuAppBar() {
   const menuItems = [
     { text: 'Catálogo', path: '#' },
     { text: 'Más Populares', path: '/populares' },
-    { text: 'Novedades', path: '#' },
+    { text: 'Novedades', path: '/novedades' },
     { text: 'Ofertas', path: '#' },
   ];
 

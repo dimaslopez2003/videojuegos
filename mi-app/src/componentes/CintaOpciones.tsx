@@ -3,18 +3,18 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Populares from '../routes/Populares';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ListItem } from '@mui/material';
 import { List } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const MotionButton = motion(Button);
 const menuItems = [
   { text: 'Catálogo', path: '#' },
   { text: 'Más Populares', path: '/populares' },
-  { text: 'Novedades', path: '#' },
-  { text: 'Ofertas', path: '#' },
+  { text: 'Novedades', path: '/novedades' },
+  { text: 'Ofertas', path: '/ofertas' },
 ];
 
 export default function Opciones() {
@@ -22,7 +22,7 @@ export default function Opciones() {
     <AppBar position="static" color="default">
       <Toolbar sx={{ justifyContent: 'center', backgroundColor: '#52696f' }}>
         {menuItems.map((item) => (
-          <Link to={item.path}>
+          <Link to={item.path} key={item.text}>
           <MotionButton 
             color="inherit" 
             sx={{ color: 'white', mx: 2 }} 

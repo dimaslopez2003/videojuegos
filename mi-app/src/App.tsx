@@ -9,6 +9,7 @@ import Cards from './componentes/Cards';
 import NinCardList from './componentes/NinCardList';
 import CardList  from './componentes/CardList';
 import Division from './componentes/Division';
+import Novedades from './routes/Novedades';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';

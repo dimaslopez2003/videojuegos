@@ -10,35 +10,35 @@ export interface pops {
   
   export const pop: pops[] = [
     {
-      avatarImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Nintendo_switch_logo.png/640px-Nintendo_switch_logo.png",
-      title: "Nintendo",
-      subheader: "Enero 18, 2024",
-      image: "https://cdn1.epicgames.com/offer/22600f09e936468c8ecfc22b5eac7d7c/EGST_StoreLandscape_2560x1440_2560x1440-d49d4862a0e1a243638d5f95517ed205",
-      description: "Una de las sagas más míticas de la historia de los videojuegos regresa con una nueva aventura en 2D con desafiantes combates con espada, plataformas con parkour, puzles, exploración y una estructura a lo metroidvania.",
+      avatarImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Xbox_one_logo.svg/2048px-Xbox_one_logo.svg.png",
+      title: "Halo Infinite",
+      subheader: "8 de diciembre de 2021",
+      image: "https://s.13.cl/sites/default/files/styles/manualcrop_850x475/public/esports/articulo/field-imagen/2021-08/portadahaloinf.jpg.jpeg?itok=Z_czWrkg",
+      description: "Halo Infinite es un videojuego de disparos en primera persona de la franquicia de videojuegos de ciencia ficción creada por Bungie Studios y actualmente desarrollada por 343 Industries.",
       method: [""]
     },
     {
-      avatarImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Nintendo_switch_logo.png/640px-Nintendo_switch_logo.png",
-      title: "Nintendo",
-      subheader: "Enero 16, 2024",
-      image: "https://areajugones.sport.es/wp-content/uploads/2024/01/mario-vs-donkey-kong-impresiones.jpg",
-      description: "Mario vs. Donkey Kong es un juego de plataformas y puzles desarrollado por Nintendo para Switch. El clásico de 2004 que se lanzó para Game Boy Advance regresa con este remake, que actualiza los gráficos y añade un modo cooperativo para que los jugadores actuales descubran esta divertida aventura de puzles.",
+      avatarImage: "https://logowik.com/content/uploads/images/mojang2090.jpg",
+      title: "Minecraft",
+      subheader: "17 de mayo de 2009",
+      image: "https://www.minecraft.net/content/dam/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Buzzy-Bees_1280x768.jpg",
+      description: "Minecraft es un videojuego de construcción de tipo «mundo abierto» o en inglés sandbox creado originalmente por el sueco Markus Persson, que creó posteriormente Mojang Studios.​​",
       method: [""]
     },
     {
-      avatarImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Nintendo_switch_logo.png/640px-Nintendo_switch_logo.png",
-      title: "Nintendo",
-      subheader: "Marzo 02, 2024",
-      image: "https://media.vandal.net/m/3-2023/20233109351955_1.jpg",
-      description: "Inazuma Eleven: Victory Read es un nuevo videojuego de rol y acción de fútbol desarrollado por Level-5 para PlayStation 4, PlayStation 5, Nintendo Switch y móviles. También conocido como Inazuma Eleven Ares, Inazuma Eleven: Great Road of Heroes, Inazuma Eleven: Victory Road of Heroe",
+      avatarImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Xbox_one_logo.svg/2048px-Xbox_one_logo.svg.png",
+      title: "Call of Duty: Warzone",
+      subheader: "10 de marzo de 2020",
+      image: "https://assets.xboxservices.com/assets/db/88/db8834a9-115d-45e7-a9b5-fa4216b2aac2.jpg?n=CoD-Warzone_GLP-Page-Hero-1084_1920x1080_04.jpg",
+      description: "Call of Duty: Warzone fue un videojuego de disparos en primera persona, perteneciente al género Battle royale gratuito, lanzado el 10 de marzo de 2020 para PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S y Microsoft Windows",
       method: [""]
     },
     {
-      avatarImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Nintendo_switch_logo.png/640px-Nintendo_switch_logo.png",
-      title: "Nintendo",
-      subheader: "Mayo 18, 2024",
-      image: "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_MinecraftNintendoSwitchEdition_image1600w.jpg",
-      description: "Minecraft es un juego de colocación de bloques y aventuras. Explora mundos generados aleatoriamente y construye cosas increíbles, desde el más humilde de los hogares hasta el más espléndido castillo. Juega en el modo creativo con recursos ilimitados o profundiza en el mundo del juego en el modo supervivencia fabricando armas y armaduras para defenderte.",
+      avatarImage: "https://img.asmedia.epimg.net/resizer/v2/BH54FVWW2BKE3FX7MX2TOXXVHM.jpg?auth=b0c5899607a7d4575e55bda10f7b6a3f7a2426a8d9c17fb9dddffb621ac0681e&width=1472&height=1104&smart=true",
+      title: "Mortal Kombat 11",
+      subheader: "23 de abril de 2019",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mortal_Kombat_11_karakter_se%C3%A7me_ekran%C4%B1.jpg/800px-Mortal_Kombat_11_karakter_se%C3%A7me_ekran%C4%B1.jpg",
+      description: "Mortal Kombat 11 es un videojuego de lucha desarrollado por NetherRealm Studios y publicado por Warner Bros. Interactive Entertainment. ",
       method: [""]
     },
     

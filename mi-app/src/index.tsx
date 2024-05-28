@@ -8,6 +8,8 @@ import './index.css';
 import App from './App';
 import Populares from './routes/Populares';
 import reportWebVitals from './reportWebVitals';
+import Novedades from './routes/Novedades';
+import Ofertas from './routes/Ofertas';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/populares",
     element: <Populares />,
+  },
+  {
+    path: "/novedades",
+    element: <Novedades />,
+  },
+  {
+    path: "/ofertas",
+    element: <Ofertas />,
   },
 ]);
 
